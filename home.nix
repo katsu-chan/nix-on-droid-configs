@@ -5,6 +5,9 @@
   home.stateVersion = "24.05";
 
   # insert home-manager config
+  
+  programs.gh.enable = true;
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
