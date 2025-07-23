@@ -11,6 +11,8 @@
     zsh
 
     git
+    openssh
+    openssl
 
     # Some common stuff that people expect to have
     procps
