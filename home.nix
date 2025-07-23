@@ -27,7 +27,7 @@
     };
   };
   home.packages = with pkgs; [
-    (writeShellScriptBin "Nixedit" ''
+    (writeScriptBin "Nixedit" ''
       #!/bin/zsh
       _Nixedit_completion() {
         local -a options
