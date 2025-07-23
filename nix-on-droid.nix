@@ -45,4 +45,10 @@
 
   # Set your time zone
   time.timeZone = "Etc/GMT-3";
+
+  home-manager = {
+    config = ./home.nix;
+    backupFileExtension = "hm-bak";
+    useGlobalPkgs = true;
+  };
 }
