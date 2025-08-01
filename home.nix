@@ -5,25 +5,46 @@
   home.stateVersion = "24.05";
 
   # insert home-manager config
-  
-  programs.gh.enable = true;
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
+  programs = {
+    gh.enable = true;
 
-    shellAliases = {
-      #ll = "ls -l";
-      Update = "nix-on-droid switch --flake ~/.config/nix-on-droid";
-    };
-    history.size = 10000;
-    
-    oh-my-zsh = { # "ohMyZsh" without Home Manager
+    hyfetch = {
       enable = true;
-      plugins = [ "git" "thefuck" ];
-      theme = "robbyrussell";
+      settings = {
+          preset = "lesbian";
+          mode = "rgb";
+          light_dark = "dark";
+          lightness = 0.6;
+          color_align = {
+            mode = "horizontal";
+            custom_colors = [];
+            fore_back = null;
+          };
+          backend = "neofetch";
+          args = null;
+          distro = "nixos";
+          pride_month_shown = [];
+          pride_month_disable = false;
+      };
+    };
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
+
+      shellAliases = {
+        #ll = "ls -l";
+        Update = "nix-on-droid switch --flake ~/.config/nix-on-droid";
+      };
+      history.size = 10000;
+    
+      oh-my-zsh = { # "ohMyZsh" without Home Manager
+        enable = true;
+        plugins = [ "git" "thefuck" ];
+        theme = "robbyrussell";
+      };
     };
   };
   home.packages = with pkgs; [
@@ -40,5 +61,5 @@
 
       "$EDITOR" ~/.config/nix-on-droid/"$1"
     '')
-  ];
-}
+  ];   
+}                                                                                                                                                                        
