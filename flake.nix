@@ -4,9 +4,11 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
 
+    nixpkgs-us.url = "github:NixOS/nixpkgs/nixos-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
-      inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+      inputs.nixpkgs.follows = "nixpkgs-us";
     };
 
     nix-on-droid = {
@@ -23,7 +25,7 @@
       modules = [ ./nix-on-droid.nix ];
     };
 
-#    home-manager-path = home-manager.outPath;
+    home-manager-path = home-manager.outPath;
 
   };
 }
